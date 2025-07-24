@@ -6,7 +6,7 @@ interface LogoProps {
   height?: number
 }
 
-export default function Logo({ className, width = 32, height = 32 }: LogoProps) {
+export default function Logo({ className, width = 24, height = 24 }: LogoProps) {
   return (
     <div className={`flex items-center space-x-2 ${className}`}>
       <svg
@@ -73,7 +73,7 @@ export default function Logo({ className, width = 32, height = 32 }: LogoProps) 
         <circle cx="24" cy="20" r="1" fill="white" />
       </svg>
       
-      <span className="font-bold text-xl">PDF Chat</span>
+      <span className="font-bold text-lg">PDF Chat</span>
     </div>
   )
 }

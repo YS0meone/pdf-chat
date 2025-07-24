@@ -1,17 +1,25 @@
-"use client"
+"use client";
 
-import { Navbar } from "@/components/navbar"
+import * as React from "react";
+import Uploader from "@/components/uploader";
+import { ModeToggle } from "@/components/mode-toggle";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export default function Home() {
+  const uploaderRef = React.useRef<HTMLDivElement>(null);
+
   return (
-    <div className="min-h-screen bg-muted pt-17">
-      <Navbar />
-      <main className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold">Welcome to PDF Chat</h1>
-        <p className="mt-4 text-muted-foreground">
-          Chat with your PDF documents using AI
-        </p>
-      </main>
+    <div className="flex min-h-screen w-full">
+      {/* Main Content */}
+      <div className="flex-1 overflow-auto p-4">
+        <div className="flex items-center justify-between mb-4">
+          <SidebarTrigger />
+          <ModeToggle />
+        </div>
+          <div className="max-w-4xl mx-auto" ref={uploaderRef}>
+            <Uploader />
+          </div>
+      </div>
     </div>
   );
 }
